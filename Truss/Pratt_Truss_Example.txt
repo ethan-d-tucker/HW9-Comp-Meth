@@ -1,0 +1,31 @@
+
+# Example TRUSS - Pratt Truss Design
+# For testing purposes with a fictional truss design.
+
+Title, 'Pratt Truss Example'
+
+# Material properties
+#         Sut(ksi) Sy(ksi) E(Mpsi) 
+Material,   120,    100,      29
+
+# Safety factor
+Static_factor,  4.0
+
+# Nodes - locations for link-joints and applied loads
+# The node name is a string
+#      name   x     y
+node,  A,     0,     0
+node,  B,     50,    75
+node,  C,     100,   0
+node,  D,     150,   75
+node,  E,     200,   0
+
+# Links - structural members connecting two nodes
+       name    Node-1   Node-2    
+link,  AB,    A,       B
+link,  BC,    B,       C
+link,  CD,    C,       D
+link,  DE,    D,       E
+link,  AC,    A,       C
+link,  CE,    C,       E
+link,  BD,    B,       D

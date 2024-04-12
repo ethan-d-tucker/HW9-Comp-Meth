@@ -1,0 +1,26 @@
+
+# Square Truss Design
+# This is a simple square truss configuration.
+
+Title, 'Square Truss'
+
+# Material properties
+#         Sut(ksi) Sy(ksi) E(Mpsi) 
+Material,   100,    80,      29
+
+# Safety factor
+Static_factor,  3.0
+
+# Nodes - locations for the corners of the square
+#      name   x     y
+node,  BottomLeft,   0,   0
+node,  TopLeft,      0,   100
+node,  TopRight,     100, 100
+node,  BottomRight,  100, 0
+
+# Links - structural members connecting the nodes to form a square
+       name    Node-1        Node-2
+link,  Left,   BottomLeft,   TopLeft
+link,  Top,    TopLeft,      TopRight
+link,  Right,  TopRight,     BottomRight
+link,  Bottom, BottomRight,  BottomLeft

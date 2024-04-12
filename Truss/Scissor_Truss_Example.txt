@@ -1,0 +1,31 @@
+
+# Example TRUSS - Scissor Truss Design
+# For testing purposes with a fictional scissor truss design.
+
+Title, 'Scissor Truss Example'
+
+# Material properties
+#         Sut(ksi) Sy(ksi) E(Mpsi) 
+Material,   110,    90,      28.5
+
+# Safety factor
+Static_factor,  3.8
+
+# Nodes - locations for link-joints and applied loads
+# The node name is a string
+#      name   x     y
+node,  Left,  0,     0
+node,  A,     40,    60
+node,  B,     80,    0
+node,  C,     120,   60
+node,  Right, 160,   0
+
+# Links - structural members connecting two nodes
+       name    Node-1   Node-2    
+link,  LA,    Left,    A
+link,  AB,    A,       B
+link,  BC,    B,       C
+link,  CR,    C,       Right
+link,  LB,    Left,    B
+link,  BR,    B,       Right
+link,  AC,    A,       C

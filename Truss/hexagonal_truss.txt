@@ -1,0 +1,32 @@
+# Example HEXAGONAL TRUSS
+# Nodes and links arranged to form a hexagonal shape
+
+Title, 'Hexagonal Truss Design'
+
+# Material properties
+Material, 120, 90, 29
+Static_factor, 3.0
+
+# Nodes - defining the points of a hexagon and a central node
+#      name    x    y
+node,  Center, 0,    0
+node,  A,      100,  0
+node,  B,      50,   86.6
+node,  C,      -50,  86.6
+node,  D,      -100, 0
+node,  E,      -50,  -86.6
+node,  F,      50,   -86.6
+
+# Links - connecting nodes to form a hexagon and internal links to the center
+link,  1,     A,      B
+link,  2,     B,      C
+link,  3,     C,      D
+link,  4,     D,      E
+link,  5,     E,      F
+link,  6,     F,      A
+link,  7,     Center, A
+link,  8,     Center, B
+link,  9,     Center, C
+link,  10,    Center, D
+link,  11,    Center, E
+link,  12,    Center, F
